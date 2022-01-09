@@ -15,7 +15,7 @@ class BLManager {
             tweets = await BlockchainResponse.findData({}, {}, 0, Number(Config.NETWORK_REQUEST_SAMPLE_SIZE), {
                 addedOn: -1,
             })
-            console.log(tweets,"tweets====")
+            //console.log(tweets,"tweets====")
         } catch (err) {
             Utils.lhtLog(
                 'BLManager:getSpeedData',
@@ -54,7 +54,7 @@ class BLManager {
         } catch (err) {
             Utils.lhtLog('BLManager:getSpeedData', 'Error saving data to xf-read-speeds DB', err, '', 'ERROR')
         }
-        console.log(response,"response=======")
+        //console.log(response,"response=======")
         return response
     }
 }
