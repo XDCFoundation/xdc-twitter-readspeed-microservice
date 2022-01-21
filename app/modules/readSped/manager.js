@@ -4,7 +4,7 @@ import Config from '../../../config'
 const Web3 = require('web3')
 const BlockchainResponse = require('../../models/blockchainResponse')
 const ReadSpeedDataModel = require('../../models/readSpeedDataModel')
-const MyContract = require('./TweetStorage.json')
+const MyContract = require('./tweetStorage.json')
 
 
 class BLManager {
