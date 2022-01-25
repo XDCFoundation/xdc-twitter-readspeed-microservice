@@ -5,15 +5,13 @@ import {
   apiSuccessMessage,
   httpConstants,
 } from "../../common/constants";
-import Connection from "../../../config/connection"
 global.amqp_connection = undefined
  global.db_connection = undefined
 export default class TweetArchive {
   
   async tweetFetch(request, response) {
-    let amqpConnection = await Connection.connectToRabbitMQ(); 
     const [error, getRes] = await Utils.parseResponse(
-      new BLManager().tweetArchive(request.body,amqpConnection)
+      new BLManager().tweetArchive(request.body)
     );
     if (!getRes) {
       return Utils.handleError(error, request, response);
