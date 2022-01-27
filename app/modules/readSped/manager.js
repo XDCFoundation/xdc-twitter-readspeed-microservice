@@ -51,11 +51,13 @@ class BLManager {
 
         try {
             response = await readSpeedData.saveData()
+          
         } catch (err) {
             Utils.lhtLog('BLManager:getSpeedData', 'Error saving data to xf-read-speeds DB', err, '', 'ERROR')
         }
+        let  response1 = await ReadSpeedDataModel.find().limit(10)
         //console.log(response,"response=======")
-        return response
+        return {response1}
     }
 }
 
