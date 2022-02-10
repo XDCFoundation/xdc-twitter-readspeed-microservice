@@ -4,10 +4,42 @@ import Config from '../../../config'
 const Web3 = require('web3')
 const BlockchainResponse = require('../../models/blockchainResponse')
 const ReadSpeedDataModel = require('../../models/readSpeedDataModel')
+const TweetDetails = require('../../models/tweetDetails')
 const MyContract = require('./tweetStorage.json')
 
 
 class BLManager {
+    async readTweet() {
+        Utils.lhtLog('BLManager:readTweet', 'Returns read tweets', '', '')
+        let selectionKey={
+            tweets:1
+        }
+        let response=[]
+
+        let skip = parseInt(0);
+
+
+        let limit = parseInt(0);
+
+
+        let result = await TweetDetails.findData({},{},0,10,{addedOn: -1})
+        let tweetCount = await TweetDetails.find().count()
+        console.log("tweet Counts ------------",tweetCount)
+        //   console.log(result)
+
+        // for(let index=result.length-1; index>=0; index--){
+
+        response.push(
+            result,
+            {tweetsInDb:tweetCount})
+
+        console.log(response)
+
+        // }
+
+        return response
+    }
+
     async getSpeedData() {
         Utils.lhtLog('BLManager:getSpeedData', 'Returns each 30m average writespeed for last 24h ', '', '')
         let tweets = []
