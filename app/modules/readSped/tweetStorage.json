@@ -2,42 +2,38 @@
     "contractName": "TweetStorage",
     "abi":[
       {
+        "constant": true,
+        "inputs": [
+          {
+            "name": "tweetId",
+            "type": "uint256"
+          }
+        ],
+        "name": "getTweetByTweetId",
+        "outputs": [
+          {
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
         "constant": false,
         "inputs": [
           {
-            "internalType": "string",
-            "name": "_tweetId",
-            "type": "string"
+            "name": "tweetId",
+            "type": "uint256"
           },
           {
-            "internalType": "string",
-            "name": "_text",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_authorId",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_createdAt",
+            "name": "tweet",
             "type": "string"
           }
         ],
         "name": "createTweet",
-        "outputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          }
-        ],
+        "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
@@ -48,7 +44,6 @@
         "name": "getCount",
         "outputs": [
           {
-            "internalType": "uint256",
             "name": "",
             "type": "uint256"
           }
@@ -61,78 +56,15 @@
         "constant": true,
         "inputs": [
           {
-            "internalType": "string",
-            "name": "tweetId",
-            "type": "string"
-          }
-        ],
-        "name": "getTweetFromTweetId",
-        "outputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
             "name": "",
             "type": "uint256"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
           }
         ],
         "name": "tweets",
         "outputs": [
           {
-            "internalType": "string",
-            "name": "tweetId",
+            "name": "",
             "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "text",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "authorId",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "createdAt",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "savedAt",
-            "type": "uint256"
           }
         ],
         "payable": false,
