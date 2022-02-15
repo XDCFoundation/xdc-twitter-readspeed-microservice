@@ -67,7 +67,7 @@ class BLManager {
                 TODO: pass tweet.tweetId in getTweetFromTweetId()
                 */
                 // console.log('tweetId: ', tweet.tweetId)
-                return myContract.methods.getTweetFromTweetId(String(tweet.tweetId)).call()
+                return myContract.methods.getTweetByTweetId(String(tweet.tweetId)).call()
             })
         )
         // console.log('values', values)
