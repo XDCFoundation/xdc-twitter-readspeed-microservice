@@ -45,7 +45,7 @@ class BLManager {
         let tweets = []
         try {
             tweets = await BlockchainResponse.findData({}, {}, 0, Number(Config.NETWORK_REQUEST_SAMPLE_SIZE), {
-                addedOn: -1,
+                _id: -1,
             })
             //console.log(tweets,"tweets====")
         } catch (err) {
