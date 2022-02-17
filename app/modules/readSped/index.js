@@ -9,7 +9,7 @@ export default class FamilyController {
   
   async getSpeedData(request, response) {
     const [error, getRes] = await Utils.parseResponse(
-      new BLManager().getSpeedData(request.params)
+      new BLManager().getSpeedData()
     );
     if (!getRes) {
       return Utils.handleError(error, request, response);
