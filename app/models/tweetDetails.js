@@ -9,6 +9,7 @@ const templateSchema = new mongoose.Schema({
         text: { type: String, default: "" },
         hashtag: { type: String, default: "" },
         country: { type: String, default: "" },
+        username: { type: String, default: ""},
         name: { type:String, default:"" },
         
    
