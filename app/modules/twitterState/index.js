@@ -27,7 +27,7 @@ const TemplateSchema=require("../../models/tweetDetails")
     async pushtweetDetails(tweetDetails) {
 
         let templateSchema = new TemplateSchema();
-        //console.log("///////////////////",tweetDetails)
+        // console.log("///////////////////",tweetDetails)
         
        // templateSchema.query = getQueryString(tweetDetails)
         templateSchema.id = tweetDetails.data.id
@@ -35,6 +35,7 @@ const TemplateSchema=require("../../models/tweetDetails")
         templateSchema.text=tweetDetails.data.text
         templateSchema.createdAt=tweetDetails.data.created_at
         templateSchema.name=tweetDetails.data.name
+        templateSchema.username=tweetDetails.data.username
         templateSchema.addedOn = new Date().getTime();
         templateSchema.modifiedOn = new Date().getTime();
         //console.log("templateSchema====",templateSchema)
