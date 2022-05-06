@@ -8,9 +8,9 @@ const blockchainResponseModel = new mongoose.Schema({
   txHash: { type: String, default: "" },
   isSuccess:{type:Boolean, default:false},
   
-  
   addedOn: { type: Number, default: Date.now() },
   modifiedOn: { type: Number, default: Date.now() },
+  currentTime: { type: Number, default: Date.now() },
 });
 
 blockchainResponseModel.method({

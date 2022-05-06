@@ -11,8 +11,9 @@ require('./config/express')(app)
 global.lhtWebLog = Utils.lhtLog
 
 class Server {
+  // ,AMQP.conn(Config.AMQP_HOST_URL, true)]
   static listen () {
-    Promise.all([DBConnection.connect(),AMQP.conn(Config.AMQP_HOST_URL, true)]).then(() => {
+    Promise.all([DBConnection.connect()]).then(() => {
       app.listen(Config.PORT)
       Utils.lhtLog('listen', `Server Started on port ${Config.PORT}`, {}, 'AyushK', httpConstants.LOG_LEVEL_TYPE.INFO)
       routes(app)
